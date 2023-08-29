@@ -117,7 +117,7 @@ img{
     display: flex!important;
 }
 .header-banner h1{
-    font-size: 2.6rem;
+    font-size: 3.6rem;
     line-height: 1.1;
     margin-bottom: 2rem;
 }
@@ -125,16 +125,16 @@ img{
     margin-top: 5.6rem;
 }
 .header-banner.banner-one{
-    background: var(--gradient), url(../images/banner_bg_1.jpg) center/cover no-repeat;
+    background: var(--gradient), url(../images/blog_img_1.jpg) center/cover no-repeat;
 }
 .header-banner.banner-two{
-    background: var(--gradient), url(../images/banner_bg_2.jpg) center/cover no-repeat;
+    background: var(--gradient), url(../images/blog_img_2.jpg) center/cover no-repeat;
 }
 .header-banner.banner-three{
-    background: var(--gradient), url(../images/banner_bg_3.jpg) center/cover no-repeat;
+    background: var(--gradient), url(../images/blog_img_3.jpg) center/cover no-repeat;
 }
 .header-banner.banner-four{
-    background: var(--gradient), url(../images/banner_bg_4.jpg) center/cover no-repeat;
+    background: var(--gradient), url(../images/blog_img_4.jpg) center/cover no-repeat;
 }
 .header-banner .container{
     max-width: 248px;
@@ -188,8 +188,10 @@ img{
     gap: 3rem;
 }
 .about-left{
-    height: 280px;
-    overflow: hidden;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
 }
 .about-right > div{
     margin-top: 3.4rem;
@@ -201,7 +203,7 @@ img{
     margin-bottom: 2rem;
 }
 .about-icon img{
-    width: 34px;
+    width: 40px;
     margin-right: 4rem;
 }
 
@@ -210,8 +212,8 @@ img{
     gap: 3.5rem;
 }
 .features-item .icon{
-    width: 150px;
-    height: 150px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     margin: auto;
 }
@@ -281,7 +283,7 @@ img{
 }
 .programs-item{
     position: relative;
-    background-color: var(--green-color);
+    background-color: rgba(255, 0, 0, 0.5);
     min-height: 360px;
     overflow: hidden;
 }
@@ -302,22 +304,25 @@ img{
 
 
 .circle-image {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%; /* Creates a circular shape */
     overflow: hidden; /* Clips the content outside the circle */
 }
-.circle-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image covers the entire container */
-}
 .circle-container {
-    width: 150px; /* Fixed width */
-    height: 150px; /* Fixed height */
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    border-radius: 50%;
+    background-color: #ffffff; /* Add a background color for the circle */
+}
+
+.circle-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* blogs section */
@@ -328,8 +333,19 @@ img{
     margin-top: 3rem;
     margin-bottom: 4rem;
 }
-.blogs .btn{
-    margin-top: 5rem;
+.blogs-item .image {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px; /* Adjust the height as needed */
+    overflow: hidden;
+}
+
+.blogs-item img {
+    width: auto;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* contact section */
@@ -337,10 +353,12 @@ img{
 .contact-content {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically center content */
-    align-items: center; /* Horizontally center content */
-    gap: 8rem;
-    height: 100vh; /* Adjust the container's height if needed */
+    justify-content: center;
+    align-items: center;
+    gap: 4rem; /* Adjust this value for consistent spacing */
+    height: 100vh;
+    margin-top: 0; /* Remove the margin-top */
+    padding: 3rem 0; /* Adjust padding as needed */
 }
 
 .contact-right iframe {
@@ -364,6 +382,9 @@ img{
 
 .contact-info-group p.text {
     margin-top: 1rem;
+}
+.text-red {
+    color: red;
 }
 
 /* Media query for smaller screens */
@@ -392,8 +413,8 @@ img{
 }
 
 .footer-logo img {
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%; /* Make the image a circle */
 }
 
@@ -412,12 +433,41 @@ img{
 .footer-links a:hover{
     color: var(--grey-color);
 }
+/* Style for the rounded Facebook icon */
+.footer-social a {
+    display: inline-block; /* Display the link as a block element */
+    text-decoration: none; /* Remove underline from the link */
+}
 
+.rounded-icon {
+    display: inline-flex; /* Use flexbox for the icon */
+    align-items: center; /* Center the icon vertically */
+    justify-content: center; /* Center the icon horizontally */
+    width: 30px; /* Set the width of the icon */
+    height: 30px; /* Set the height of the icon */
+    border-radius: 50%; /* Make the icon circular */
+    background-color: #3b5998; /* Background color of the icon */
+    color: white; /* Icon color */
+    transition: background-color 0.3s, color 0.3s; /* Add transition effect */
+  
+}
+.rounded-icon1 {
+    display: inline-flex; /* Use flexbox for the icon */
+    align-items: center; /* Center the icon vertically */
+    justify-content: center; /* Center the icon horizontally */
+    width: 30px; /* Set the width of the icon */
+    height: 30px; /* Set the height of the icon */
+    border-radius: 50%; /* Make the icon circular */
+    background-color: #11a53e; /* Background color of the icon */
+    color: white; /* Icon color */
+    transition: background-color 0.3s, color 0.3s; /* Add transition effect */
+  
+}
 
-
-
-
-
+.rounded-icon:hover {
+    background-color: #1877f2; /* Change background color on hover */
+    color: white; /* Icon color on hover */
+}
 
 /* media queries */
 @media(min-width: 450px){
@@ -428,9 +478,11 @@ img{
     .header-banner h1{
         font-size: 7.2rem;
     }
-    .header-banner .lead{
-        font-size: 2.4rem;
+    .header-banner .lead {
+        display: inline-block;
+        margin-right: 10px; 
     }
+
     .header-banner .container{
         max-width: 100%;
     }
@@ -442,7 +494,11 @@ img{
         gap: 2rem;
     }
 }
-
+@media (max-width: 768px) {
+    .logo {
+        max-width: 100px;
+    }
+}
 @media(min-width: 678px){
     .about-content{
         grid-template-columns: repeat(2, 1fr);
@@ -452,10 +508,11 @@ img{
     .about-left{
         height: 100%;
     }
-    .about-left img{
-        height: 100%;
-        -o-object-fit: cover;
-           object-fit: cover;
+    .about-left img {
+        width: 100%;
+        height: auto;
+        display: block;
+        max-width: 100%;
     }
     .features-content, .programs-content{
         grid-template-columns: repeat(2, 1fr);
